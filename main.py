@@ -39,7 +39,7 @@ def diario():
         else:
             print("Opção inválida")
 
-    if opcao_diario == 2:
+    elif opcao_diario == 2:
         print("1. Meus remédios")
         print("2. Cadastrar novo remédio")
         opcao_remedios = int(input("Selecione uma das opções acima: \n"))
@@ -51,7 +51,7 @@ def diario():
         else:
             print("Opção inválida")
 
-    if opcao_diario == 3:
+    elif opcao_diario == 3:
         print("1. Minhas consultas")
         print("2. Agendar nova consulta")
         opcao_consultas = int(input("Selecione uma das opções acima: \n"))
@@ -63,7 +63,7 @@ def diario():
         else:
                 print("Opção inválida")
 
-    if opcao_diario == 4:
+    elif opcao_diario == 4:
         print("1. Minhas anotações")
         print("2. Nova nota")
         opcao_notas = int(input("Selecione uma das opções acima: \n"))
