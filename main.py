@@ -5,27 +5,30 @@ from listas import lista_unidades, lista_lembretes, lista_remedios, lista_consul
 
 def emergencia():
     while True:
-        print("\n=== EMERGÊNCIA ===\n")
-        print("1. Localização atual")
-        print("2. Endereço padrão")
-        print("3. Novo endereço")
-        print("4. Voltar\n")
+        try:
+            print("\n=== EMERGÊNCIA ===\n")
+            print("1. Localização atual")
+            print("2. Endereço padrão")
+            print("3. Novo endereço")
+            print("4. Voltar\n")
 
-        opcao_emergencia = int(input("Selecione uma das opções acima: "))
+            opcao_emergencia = int(input("Selecione uma das opções acima: "))
 
-        if opcao_emergencia == 1 or opcao_emergencia == 2:
-            print("\nConcluído. Estamos a caminho.")
-            break
+            if opcao_emergencia == 1 or opcao_emergencia == 2:
+                print("\nConcluído. Estamos a caminho.")
+                break
 
-        elif opcao_emergencia == 3:
-            novo_endereco = input("Informe o novo endereço: ")
-            print("\nConcluído. Estamos a caminho.")
-            break
+            elif opcao_emergencia == 3:
+                novo_endereco = input("Informe o novo endereço: ")
+                print("\nConcluído. Estamos a caminho.")
+                break
 
-        elif opcao_emergencia == 4:
-            break
-        else:
-            print("ERRO")
+            elif opcao_emergencia == 4:
+                break
+            else:
+                raise ValueError
+        except ValueError:
+            print("Opção inválida, digite um número de 1 à 4")
 
 
 
@@ -33,170 +36,214 @@ def emergencia():
 
 def diario():
     while True:
-        print("\n=== DIÁRIO ===\n")
-        print("1. Lembretes")
-        print("2. Remédios")
-        print("3. Consultas")
-        print("4. Anotações")
-        print("5. Voltar\n")
+        try:
+            print("\n=== DIÁRIO ===\n")
+            print("1. Lembretes")
+            print("2. Remédios")
+            print("3. Consultas")
+            print("4. Anotações")
+            print("5. Voltar\n")
 
-        opcao_diario = int(input("Selecione uma das opções acima: \n"))
+            opcao_diario = int(input("Selecione uma das opções acima: \n"))
 
-        if opcao_diario == 1:
-            while True:
-                print("1. Meus lembretes")
-                print("2. Adicionar lembrete")
-                print("3. Voltar\n")
-                opcao_lembretes = int(input("Selecione uma das opções acima: \n"))
+            if opcao_diario == 1:
+                while True:
+                    try:
 
-                if opcao_lembretes == 1:
-                    if not lista_lembretes:
-                        print("\nNão há lembretes.")
-                        break
+                        print("1. Meus lembretes")
+                        print("2. Adicionar lembrete")
+                        print("3. Voltar\n")
+                        opcao_lembretes = int(input("Selecione uma das opções acima: \n"))
 
-                    else:
-                        print(lista_lembretes)
-                        break
+                        if opcao_lembretes == 1:
+                            if not lista_lembretes:
+                                print("\nNão há lembretes.")
+                                break
 
-                elif opcao_lembretes == 2:
-                    novo_lembrete = input("Novo lembrete: ")
-                    lista_lembretes.append(novo_lembrete)
-                    print("\nLembrete adicionado com sucesso!")
-                    break
+                            else:
+                                print(lista_lembretes)
+                                break
 
-                elif opcao_lembretes == 3:
-                    break
+                        elif opcao_lembretes == 2:
+                            novo_lembrete = input("Novo lembrete: ")
+                            lista_lembretes.append(novo_lembrete)
+                            print("\nLembrete adicionado com sucesso!")
+                            break
 
-                else:
-                    print("Opção inválida")
+                        elif opcao_lembretes == 3:
+                            break
 
-        elif opcao_diario == 2:
-            while True:
-                print("1. Meus remédios")
-                print("2. Cadastrar novo remédio")
-                print("3. Voltar\n")
+                        else:
+                            raise ValueError
+                    except ValueError:
+                        print("Opção inválida, digite um número de 1 à 3")
 
-                opcao_remedios = int(input("Selecione uma das opções acima: \n"))
+            elif opcao_diario == 2:
+                while True:
+                    try:
+                        print("1. Meus remédios")
+                        print("2. Cadastrar novo remédio")
+                        print("3. Voltar\n")
 
-                if opcao_remedios == 1:
-                    if not lista_remedios:
-                        print("\nNão há remédios cadastrados")
-                        break
+                        opcao_remedios = int(input("Selecione uma das opções acima: \n"))
 
-                    else:
-                        print(lista_remedios)
-                        break
+                        if opcao_remedios == 1:
+                            if not lista_remedios:
+                                print("\nNão há remédios cadastrados")
+                                break
 
-                elif opcao_remedios == 2:
-                    novo_remedio = input("\nNovo remédio: ")
-                    lista_remedios.append(novo_remedio)
-                    print(f'\nAdicionado um novo remédio. ({novo_remedio})')
-                    break
+                            else:
+                                print(lista_remedios)
+                                break
 
-                elif opcao_remedios == 3:
-                    break
+                        elif opcao_remedios == 2:
+                            novo_remedio = input("\nNovo remédio: ")
+                            lista_remedios.append(novo_remedio)
+                            print(f'\nAdicionado um novo remédio. ({novo_remedio})')
+                            break
 
-                else:
-                    print("Opção inválida")
+                        elif opcao_remedios == 3:
+                            break
 
-        elif opcao_diario == 3:
-            while True:
-                print("1. Minhas consultas")
-                print("2. Agendar nova consulta")
-                print("3. Voltar\n")
+                        else:
+                            raise ValueError
+                    except ValueError:
+                        print("Opção inválida, digite um número de 1 à 3")
 
-                opcao_consultas = int(input("Selecione uma das opções acima: \n"))
+            elif opcao_diario == 3:
+                while True:
+                    try:
+                        print("1. Minhas consultas")
+                        print("2. Agendar nova consulta")
+                        print("3. Voltar\n")
 
-                if opcao_consultas == 1:
-                    if not lista_consultas:
-                        print("\nNão há consultas marcadas")
-                        break
+                        opcao_consultas = int(input("Selecione uma das opções acima: \n"))
 
-                    else:
-                        print(lista_consultas)
-                        break
+                        if opcao_consultas == 1:
+                            if not lista_consultas:
+                                print("\nNão há consultas marcadas")
+                                break
 
-                elif opcao_consultas == 2:
-                        nova_consulta = input("\nNova consulta: ")
-                        lista_consultas.append(nova_consulta)
-                        print("\nConsulta agendada com sucesso!")
-                        break
-                
-                elif opcao_consultas == 3:
-                    break
+                            else:
+                                print(lista_consultas)
+                                break
 
-                else:
-                    print("Opção inválida")
+                        elif opcao_consultas == 2:
+                                nova_consulta = input("\nNova consulta: ")
+                                lista_consultas.append(nova_consulta)
+                                print("\nConsulta agendada com sucesso!")
+                                break
 
-        elif opcao_diario == 4:
-            while True:
-                print("1. Minhas anotações")
-                print("2. Nova nota")
-                print("3. Voltar\n")
+                        elif opcao_consultas == 3:
+                            break
 
-                opcao_notas = int(input("Selecione uma das opções acima: \n"))
+                        else:
+                            raise ValueError
 
-                if opcao_notas == 1:
-                    if not lista_notas:
-                        print("\nNão há anotações.")
-                        break
+                    except ValueError:
+                        print("Opção inválida, digite um número de 1 à 3")
 
-                    else:
-                        print(lista_notas)
-                        break
+            elif opcao_diario == 4:
+                while True:
+                    try:
+                        print("1. Minhas anotações")
+                        print("2. Nova nota")
+                        print("3. Voltar\n")
 
-                elif opcao_notas == 2:
-                        nova_nota = input("Nova nota: ")
-                        lista_notas.append(nova_nota)
-                        print("\nAnotação salva com sucesso!")
-                        break
-                
-                elif opcao_notas == 3:
-                    break
+                        opcao_notas = int(input("Selecione uma das opções acima: \n"))
 
-                else:
-                    print("Opção inválida")
-        else:
-            print("ERRO")
+                        if opcao_notas == 1:
+                            if not lista_notas:
+                                print("\nNão há anotações.")
+                                break
+
+                            else:
+                                print(lista_notas)
+                                break
+
+                        elif opcao_notas == 2:
+                                nova_nota = input("Nova nota: ")
+                                lista_notas.append(nova_nota)
+                                print("\nAnotação salva com sucesso!")
+                                break
+
+                        elif opcao_notas == 3:
+                            break
+
+                        else:
+                            raise ValueError
+                    except ValueError:
+                        print("Digite um número de 1 à 3")
+            elif  opcao_diario == 5:
+                break
+            else:
+                raise ValueError
+        except ValueError:
+                print("Digite um número de 1 à 5")
+
+
 
 
 # FUNÇÃO "TRIAGEM": benefício para atendimento mais rápido no pronto-socorro
 
 def triagem():
     while True:
-        print("\n=== PRONTO-SOCORRO ===\n")
+        try:
+            print("\n=== PRONTO-SOCORRO ===\n")
 
-        print("Deseja prosseguir com a triagem?")
-        
-        opcao_triagem = input("    SIM | NÃO    \n").upper()
+            print("Deseja prosseguir com a triagem?")
 
-        if opcao_triagem == "SIM" or "S":
-            print("Selecione uma das unidades abaixo: \n")
-            print(lista_unidades)
-            unidade_triagem = input("")
-            sintomas = input("Descreva o que está sentindo: ")
-            print("\nEncaminhado para a unidade selecionada.\n")
+            opcao_triagem = input("    SIM | NÃO    \n").upper()
+
+            if opcao_triagem == "SIM" or opcao_triagem == "S":
+                while True:
+                    try:
+                        print("Selecione uma das unidades abaixo: \n")
+                        for i in range(len(lista_unidades)):
+                            print(i, lista_unidades[i])
+
+                        unidade_triagem = int(input(""))
+                        if unidade_triagem < 0 or unidade_triagem > 5:
+                            raise ValueError
+                        sintomas = input("Descreva o que está sentindo: ")
+                        print("\nEncaminhado para a unidade selecionada.\n")
+                        break
+
+                    except ValueError:
+                        print("Opção inválida, digite um número de 0 à 5")
+                break
+            elif opcao_triagem == "NAO" or opcao_triagem == "N" or opcao_triagem == "NÃO":
+                break
+            else:
+                raise TypeError
+        except TypeError:
+            print("Digite 'SIM ou 'NAO'")
+
+
 
 
 # MENU GERAL
 
 while True:
-    print("\n=== DASHBOARD ===\n")
-    print("1. Emergência")
-    print("2. Diário")
-    print("3. Pronto Socorro")
-    print("4. Sair\n")
-    acesso = int(input("Digite a opção desejada: "))
+    try:
+        print("\n=== DASHBOARD ===\n")
+        print("1. Emergência")
+        print("2. Diário")
+        print("3. Pronto Socorro")
+        print("4. Sair\n")
+        acesso = int(input("Digite a opção desejada: "))
 
 
-    if acesso == 1:
-        emergencia()
-    elif acesso == 2:
-        diario()
-    elif acesso == 3:
-        triagem()
-    elif acesso == 4:
-        break
+        if acesso == 1:
+            emergencia()
+        elif acesso == 2:
+            diario()
+        elif acesso == 3:
+            triagem()
+        elif acesso == 4:
+            break
 
-    else:
-        print("Opção inválida")
+        else:
+            raise ValueError
+    except ValueError:
+        print("Opção inválida, digite um número de 1 à 4")
