@@ -34,6 +34,7 @@ Antes de começar, você precisa ter instalado em sua máquina o GIT. Além diss
 Video demonstrando o software em execução, e explicando como o sistema aborda o problema. </br>
 Link:
 
+<h2 id="desenvolvedores">👩‍💻Desenvolvedores</h2>
 <table>
   <tr>
     <td align="center"><img style="border-radius: 50%;" src="./images/MicrosoftTeams-image (2).png" width="150px;" alt=""/><br /><sub><b>Celeste Mayumi</b></sub><br /><a href="https://www.linkedin.com/in/celestetanaka/" title= "Linkedin"><img width="20px" src="https://logopng.com.br/logos/linkedin-83.png"/></a><a href="https://github.com/celestemayumi" title="GitHub"><img src="https://flyclipart.com/thumb2/github-logo-github-logo-media-icon-png-and-vector-for-free-813508.png" width="30px"/></a></br>RM 552865</td>  
