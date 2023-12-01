@@ -32,7 +32,7 @@ Antes de começar, você precisa ter instalado em sua máquina o GIT. Além diss
 
 <h2 id="video">🎬Video demonstrativo</h2>
 Video demonstrando o software em execução, e explicando como o sistema aborda o problema. </br>
-Link:
+Link: https://youtu.be/CuZub2uYAeQ
 
 <h2 id="desenvolvedores">👩‍💻Desenvolvedores</h2>
 <table>
